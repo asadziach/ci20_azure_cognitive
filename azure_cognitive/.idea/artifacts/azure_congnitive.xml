@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="azure_congnitive">
+    <output-path>$PROJECT_DIR$/out/artifacts/azure_congnitive</output-path>
+    <root id="archive" name="azure_congnitive.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="azure_cognitive" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/jna-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/httpmime-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/fluent-hc-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/commons-codec-1.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/jna-platform-4.1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/httpclient-win-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../httpcomponents-client-4.5.2/lib/httpclient-cache-4.5.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
