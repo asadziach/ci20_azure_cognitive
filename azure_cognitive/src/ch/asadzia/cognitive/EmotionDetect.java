@@ -23,9 +23,9 @@ import org.json.simple.parser.JSONParser;
  * Copyright (c) Asad Zia
  * Licensed under the MIT license. See LICENSE file in the project root for full license information.
  */
-public class Emotion extends MsCognitiveService {
+public class EmotionDetect extends MsCognitiveService {
 
-    public Emotion(File data) {
+    public EmotionDetect(File data) {
         super(data);
     }
 

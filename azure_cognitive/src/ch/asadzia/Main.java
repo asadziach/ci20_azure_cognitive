@@ -1,8 +1,9 @@
 package ch.asadzia;
 
-import ch.asadzia.cognitive.Emotion;
+import ch.asadzia.cognitive.EmotionDetect;
 import ch.asadzia.cognitive.ServiceResult;
 import ch.asadzia.cognitive.ServiceResult.Sentiment;
+import ch.asadzia.cognitive.SituationAnalysis;
 
 import java.io.*;
 
@@ -53,21 +54,37 @@ public class Main {
             process.waitFor(); // Wait for the snapshot to be taken.
 
             File image = new File(imageCaptureFile);
-            Emotion emotion = new Emotion(image);
+
+            /*
+             * Emotion Detection
+             */
+            EmotionDetect emotion = new EmotionDetect(image);
             ServiceResult result = emotion.process();
             if(result == null){
                 System.err.println("Error during emotion.process()");
                 expressSentiment(null);
                 return;
             }
-            System.out.println("Emotion is " + result.message + ", Sentiment is " + result.sentiment);
+            System.out.println("Emotion Detected is " + result.message + ", Sentiment is " + result.sentiment);
             expressSentiment(result.sentiment);
 
-        System.out.println("Thats all folks");
+            /*
+             * Situation Analysis
+             */
+            SituationAnalysis situation = new SituationAnalysis(image);
+            result = situation.process();
+            if(result == null){
+                System.err.println("Error during situation.process()");
+                expressSentiment(null);
+                return;
+            }
+            System.out.println("Situation Analysis is " + result.message + ", Sentiment is " + result.sentiment);
+            expressSentiment(result.sentiment);
+
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-
+        System.out.println("That's all folks");
     }
 
     private static void expressSentiment(Sentiment sentiment) throws IOException, InterruptedException {
@@ -79,7 +96,7 @@ public class Main {
         byte[] bytes = new byte[2];
         bytes[1] = '\n';
 
-        if(sentiment == null){ // error encountered during processing
+        if(sentiment == null){ // Represents error
             bytes[0] = '1';
             led1Brightness.write(bytes);
             led2Brightness.write(bytes);
