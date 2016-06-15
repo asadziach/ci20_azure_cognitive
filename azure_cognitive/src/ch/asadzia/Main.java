@@ -61,12 +61,12 @@ public class Main {
             EmotionDetect emotion = new EmotionDetect(image);
             ServiceResult result = emotion.process();
             if(result == null){
-                System.err.println("Error during emotion.process()");
+                System.err.println("No face detected.");
                 expressSentiment(null);
-                return;
+            }else {
+                System.out.println("Emotion Detected is " + result.message + ", Sentiment is " + result.sentiment);
+                expressSentiment(result.sentiment);
             }
-            System.out.println("Emotion Detected is " + result.message + ", Sentiment is " + result.sentiment);
-            expressSentiment(result.sentiment);
 
             /*
              * Situation Analysis
