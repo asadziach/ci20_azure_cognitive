@@ -60,6 +60,7 @@ public class Main {
              */
             EmotionDetect emotion = new EmotionDetect(image);
             ServiceResult result = emotion.process();
+
             if(result == null){
                 System.err.println("No face detected.");
                 expressSentiment(null);
